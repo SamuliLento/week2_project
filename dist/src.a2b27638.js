@@ -226,7 +226,7 @@ function initializeCode() {
       newAdmin.innerText = "-";
     }
 
-    newImage = tableBody.lastChild.appendChild(newUsername);
+    tableBody.lastChild.appendChild(newUsername);
     tableBody.lastChild.appendChild(newEmail);
     tableBody.lastChild.appendChild(newAddress);
     tableBody.lastChild.appendChild(newAdmin);

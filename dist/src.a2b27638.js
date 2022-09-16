@@ -206,6 +206,7 @@ if (document.readyState !== "loading") {
 
 function initializeCode() {
   var submitDataButton = document.getElementById("submit-data");
+  var emptyTableButton = document.getElementById("empty-table");
 
   function newTableRow() {
     var tableBody = document.getElementById("table-body");
@@ -214,6 +215,7 @@ function initializeCode() {
     var newEmail = document.createElement("td");
     var newAddress = document.createElement("td");
     var newAdmin = document.createElement("td");
+    var newImage = document.createElement("td");
     newUsername.innerText = document.getElementById("input-username").value;
     newEmail.innerText = document.getElementById("input-email").value;
     newAddress.innerText = document.getElementById("input-address").value;
@@ -230,8 +232,19 @@ function initializeCode() {
     tableBody.lastChild.appendChild(newAdmin);
   }
 
+  function emptyTable() {
+    var tableBody = document.getElementById("table-body");
+
+    while (tableBody.hasChildNodes()) {
+      tableBody.removeChild(tableBody.lastChild);
+    }
+  }
+
   submitDataButton.addEventListener("click", function () {
     newTableRow();
+  });
+  emptyTableButton.addEventListener("click", function () {
+    emptyTable();
   });
 }
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

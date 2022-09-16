@@ -12,6 +12,7 @@ if (document.readyState !== "loading") {
 
 function initializeCode() {
   const submitDataButton = document.getElementById("submit-data");
+  const emptyTableButton = document.getElementById("empty-table");
 
   function newTableRow() {
     const tableBody = document.getElementById("table-body");
@@ -37,7 +38,18 @@ function initializeCode() {
     tableBody.lastChild.appendChild(newAdmin);
   }
 
+  function emptyTable() {
+    const tableBody = document.getElementById("table-body");
+    while (tableBody.hasChildNodes()) {
+      tableBody.removeChild(tableBody.lastChild);
+    }
+  }
+
   submitDataButton.addEventListener("click", function () {
     newTableRow();
+  });
+
+  emptyTableButton.addEventListener("click", function () {
+    emptyTable();
   });
 }

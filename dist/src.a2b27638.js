@@ -206,6 +206,7 @@ if (document.readyState !== "loading") {
 
 function initializeCode() {
   var submitDataButton = document.getElementById("submit-data");
+  var emptyTableButton = document.getElementById("empty-table");
 
   function newTableRow() {
     var tableBody = document.getElementById("table-body");
@@ -230,8 +231,19 @@ function initializeCode() {
     tableBody.lastChild.appendChild(newAdmin);
   }
 
+  function emptyTable() {
+    var tableBody = document.getElementById("table-body");
+
+    while (tableBody.hasChildNodes()) {
+      tableBody.removeChild(tableBody.lastChild);
+    }
+  }
+
   submitDataButton.addEventListener("click", function () {
     newTableRow();
+  });
+  emptyTableButton.addEventListener("click", function () {
+    emptyTable();
   });
 }
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

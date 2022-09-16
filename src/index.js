@@ -25,7 +25,11 @@ function initializeCode() {
     newUsername.innerText = document.getElementById("input-username").value;
     newEmail.innerText = document.getElementById("input-email").value;
     newAddress.innerText = document.getElementById("input-address").value;
-    newAdmin.innerText = document.getElementById("input-admin").value;
+    if (document.getElementById("input-admin").checked) {
+      newAdmin.innerText = "X";
+    } else {
+      newAdmin.innerText = "-";
+    }
 
     tableBody.lastChild.appendChild(newUsername);
     tableBody.lastChild.appendChild(newEmail);

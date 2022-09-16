@@ -217,7 +217,13 @@ function initializeCode() {
     newUsername.innerText = document.getElementById("input-username").value;
     newEmail.innerText = document.getElementById("input-email").value;
     newAddress.innerText = document.getElementById("input-address").value;
-    newAdmin.innerText = document.getElementById("input-admin").value;
+
+    if (document.getElementById("input-admin").checked) {
+      newAdmin.innerText = "X";
+    } else {
+      newAdmin.innerText = "-";
+    }
+
     tableBody.lastChild.appendChild(newUsername);
     tableBody.lastChild.appendChild(newEmail);
     tableBody.lastChild.appendChild(newAddress);
@@ -256,7 +262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34569" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -22,6 +22,7 @@ function initializeCode() {
     let newEmail = document.createElement("td");
     let newAddress = document.createElement("td");
     let newAdmin = document.createElement("td");
+    let newImage = document.createElement("td");
 
     newUsername.innerText = document.getElementById("input-username").value;
     newEmail.innerText = document.getElementById("input-email").value;
@@ -31,8 +32,7 @@ function initializeCode() {
     } else {
       newAdmin.innerText = "-";
     }
-
-    tableBody.lastChild.appendChild(newUsername);
+    newImage = tableBody.lastChild.appendChild(newUsername);
     tableBody.lastChild.appendChild(newEmail);
     tableBody.lastChild.appendChild(newAddress);
     tableBody.lastChild.appendChild(newAdmin);
